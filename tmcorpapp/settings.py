@@ -59,6 +59,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [os.path.join(BASE_DIR, "templates")],
+        # "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -136,3 +137,7 @@ AUTH_USER_MODEL = "tmglobal.Users"
 
 # Role Permissions
 ROLEPERMISSIONS_MODULE = "tmcorpapp.roles"
+
+# Redirect Logout
+LOGIN_REDIRECT_URL = "hcorp"
+LOGOUT_REDIRECT_URL = "/"

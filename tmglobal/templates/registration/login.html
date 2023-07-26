@@ -35,15 +35,16 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-          <form action="#">
+          <form method = "POST" action="#">
+            {% csrf_token %}
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Digite seu email" required>
+                <input type="text" id="email_address" name="username" placeholder="Digite seu email" required autofocus>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Digite sua senha" required>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
               </div>
               <div class="text"><a href="#">Esqueceu sua senha?</a></div>
               <div class="button input-box">
@@ -51,6 +52,9 @@
               </div>
               <!-- <div class="text sign-up-text">Ainda não tem cadastro? <label for="flip">Entre agora</label></div> -->
             </div>
+            {% for k, v in form.errors.items %}
+              {{ v }}
+            {% endfor %}
           </form>
     </div>
     </div>
