@@ -1,0 +1,12 @@
+>>> Gerais
+- Ajustar as pastas e remover arquivos desnecessários.
+- Colocar todas os stats no global (raiz do projeto)
+
+>>> Login
+- Revisar o HTML
+
+>>> HCorp
+- 
+
+>>> TMRAT
+- Desenvolver 

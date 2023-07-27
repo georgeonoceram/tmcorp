@@ -12,3 +12,7 @@ def home(request):
 @login_required
 def hcorp(requests):
     return render(requests, "tmglobal/pages/hcorp.html")
+
+
+def hcorp_geo(request):
+    return render(request, "tmglobal/pages/hcorp_geo.html")

@@ -1,60 +1,39 @@
 {% load static %}
 <!DOCTYPE html>
-<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
-<html lang="pt-BR" dir="ltr">
+<html lang="pt-BR">
 
-  <head>
-    <meta charset="UTF-8">
-    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
-    <link rel="stylesheet" href="{% static 'tmglobal/css/hlogin_style.css' %}">
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  
-<body>
-  <div class="container">
-    <input type="checkbox" id="flip">
-    <div class="cover">
-      <div class="front">
-        <img src="{% static 'tmglobal/images/frontImgq01.png' %}" alt="">
-        <div class="text">
-          <span class="text-1">PAGINA LOGADA!!!!! <br> a você</span>
-          <span class="text-2">PAGINA LOGADA!!!!!!</span>
-        </div>
-      </div>
-    <div class="back">
-        <img class="backImg" src="{% static 'tmglobal/images/backImg.jpg' %}" alt="">
-        <div class="text">
-          <span class="text-1">Complete miles of journey <br> with one step</span>
-          <span class="text-2">Let's get started</span>
-        </div>
-      </div>
-    </div>
-    <div class="forms">
-        <div class="form-content">
-          <div class="login-form">
-            <div class="title">Login</div>
-          <form action="#">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Digite seu email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Digite sua senha" required>
-              </div>
-              <div class="text"><a href="#">Esqueceu sua senha?</a></div>
-              <div class="button input-box">
-                <input type="submit" value="Entrar">
-              </div>
-              <!-- <div class="text sign-up-text">Ainda não tem cadastro? <label for="flip">Entre agora</label></div> -->
-            </div>
-          </form>
-    </div>
-    </div>
-    </div>
+<head>
+  {% include 'tmglobal/partials/head.html' %}
+  <title>{% block title %}{% endblock title %} Tecmed Sistema Corporativo</title>
+</head>
+
+<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+
+  {% include 'tmglobal/partials/header.html' %}    <!-- - Header - -->
+  {% include 'tmglobal/partials/menu.html' %}    <!-- - Nav Menu - -->
+
+  <main id="main">
+    {% include 'tmglobal/partials/main_hero.html' %}      <!-- - Main Hero - -->
+    {% include 'tmglobal/partials/main_about.html' %}     <!-- - Main About - -->
+    {% include 'tmglobal/partials/main_stats.html' %}     <!-- - Main Statistics - -->
+    {% include 'tmglobal/partials/main_services.html' %}  <!-- - Main Services - -->
+    {% include 'tmglobal/partials/main_team.html' %}  <!-- - Main Team - -->
+  </main>
+
+  {% include 'tmglobal/partials/footer.html' %} <!-- - Footer - -->
+    
+  {% include 'tmglobal/partials/scroll_top_bt.html' %} <!-- - Scroll Top Button - -->
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
+
+  {% include 'tmglobal/partials/js_files.html' %} <!-- - JS Files - -->
+
 </body>
+
 </html>

@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ html_language }}">
+
+<head>
+    {% include 'tmglobal/partials/head.html' %}
+    <title>{% block title %}{% endblock title %} Recipes</title>
+</head>
+
+<body>
+    {% include 'tmglobal/partials/menu.html' %}
+    {% include 'tmglobal/partials/header.html' %}
+    {% include 'tmglobal/partials/search.html' %}
+
+    <main class="main-content-container">
+        {% block content %}{% endblock content %}
+        {% include 'tmglobal/partials/pagination.html' %}
+    </main>
+
+    {% include 'tmglobal/partials/footer.html' %}
+
+    <script src="{% static 'tmglobal/js/scripts.js' %}"></script>
+</body>
+
+</html>
