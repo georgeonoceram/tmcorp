@@ -4,6 +4,7 @@
 
 >>> Login
 - Revisar o HTML
+- Ajustar para conseguir login pela pagina incial, só está pelo end completo
 
 >>> HCorp
 - 

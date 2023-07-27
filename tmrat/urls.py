@@ -1,7 +1,7 @@
 from django.urls import path
 
-from tmrat.views import home
+from tmrat.views import htmrat
 
 urlpatterns = [
-    path('', home),  # Home
+    path("htmrat/", htmrat, name="htmrat"),  # Home RAT
 ]

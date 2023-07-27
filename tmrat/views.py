@@ -1,9 +1,8 @@
-# Create your views here.
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
-# from django.shortcuts import render
 
-def home(request):
-    return render(request, 'tmrat/pages/home.html')
+@login_required
+def htmrat(request):
+    return render(request, "tmrat/pages/htmrat.html")
