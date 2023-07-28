@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Users
+from tmglobal.models.usuarios import Users
 from django.contrib.auth import admin as noc_admin_auth_django
 from .forms import UserChangeForms, UserCreationForms
 
@@ -10,5 +10,5 @@ class UsersAdmin(noc_admin_auth_django.UserAdmin):
     add_form = UserCreationForms
     model = UserChangeForms
     fieldsets = noc_admin_auth_django.UserAdmin.fieldsets + (
-        ("Tecmed", {"fields": ["noc_cargo", "noc_empresa"]}),
+        ("Tecmed", {"fields": ["usr_empresa", "usr_filial", "usr_cargo"]}),
     )

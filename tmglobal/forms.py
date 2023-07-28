@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import forms
-from .models import Users
+from tmglobal.models.usuarios import Users
 
 
 class UserChangeForms(forms.UserChangeForm):
