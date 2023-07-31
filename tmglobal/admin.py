@@ -1,7 +1,7 @@
 from django.contrib import admin
 from tmglobal.models.usuarios import Users
 from django.contrib.auth import admin as noc_admin_auth_django
-from .forms import UserChangeForms, UserCreationForms
+from tmglobal.forms.frm_admin import UserChangeForms, UserCreationForms
 
 
 @admin.register(Users)

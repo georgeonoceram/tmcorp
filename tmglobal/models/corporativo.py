@@ -225,6 +225,14 @@ class Clientes(models.Model):
         null=True,
     )
 
+    email_cli = models.EmailField(
+        max_length=254,
+        verbose_name="E-mail do Cliente",
+        db_comment="Endereço de e-mail do Cliente",
+        blank=True,
+        null=True,
+    )
+
     class Meta:
         indexes = [
             models.Index(fields=["cod_cli", "seq_cli"]),
@@ -323,6 +331,14 @@ class Fornecedores(models.Model):
     dt_ini_relac_for = models.DateField(
         verbose_name="Início do Relacionamento",
         db_comment="Data do início do relacionamento com Fornecedor",
+        blank=True,
+        null=True,
+    )
+
+    email_for = models.EmailField(
+        max_length=254,
+        verbose_name="E-mail do Fornecedor",
+        db_comment="Endereço de e-mail do Fornecedor",
         blank=True,
         null=True,
     )
