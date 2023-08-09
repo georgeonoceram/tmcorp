@@ -1,9 +1,31 @@
 from django.db import models
 from .tmrat_choices import Noc_RAT_Choices
+from tmglobal.models.corporativo import Clientes, Fornecedores
+from tmglobal.models.usuarios import Users
 
 
 class RelAtTec(models.Model):
-    rat_pk = models.IntegerField(primary_key=True)
+    rat_pk = models.BigAutoField(
+        verbose_name="Código do RAT",
+        db_comment="Código Unico do RAT",
+        primary_key=True,
+        auto_created=True,
+        db_index=True,
+    )
+    cod_cli = models.ForeignKey(
+        Clientes,
+        on_delete=models.SET_NULL,
+        null=True,
+        verbose_name="Código do Cliente",
+        db_comment="Código Unico do cliente",
+    )
+    user_rat = models.ForeignKey(
+        Users,
+        on_delete=models.SET_NULL,
+        null=True,
+        verbose_name="Código do Técnico",
+        db_comment="Código Unico do Técnico",
+    )
     tp_rat = models.CharField(
         verbose_name="Tipo RAT",
         db_comment="Tipo do Relatório de Atendimento Técnico",
@@ -14,6 +36,12 @@ class RelAtTec(models.Model):
     dt_rat = models.DateField(
         verbose_name="Data RAT",
         db_comment="Data do Relatório de Atendimento Técnico",
+    )
+
+    dt_rat_sys = models.DateField(
+        verbose_name="Data de inclusão RAT",
+        db_comment="Data da Inclusão do Relatório de Atendimento Técnico",
+        auto_now_add=True,
     )
 
     probl_rat = models.TextField(
@@ -67,6 +95,12 @@ class RelAtTec(models.Model):
         verbose_name="Valor das peças",
         db_comment="Valor das peças do RAT",
     )
+
+    # images_rat = models.ImageField(
+    #   verbose_name="Imagens anexas ",
+    #  db_comment="Imagens anexas ao RAT",
+    # upload_to="tmrat/covers/%Y/%m/%d",
+    # )
 
 
 # cliente

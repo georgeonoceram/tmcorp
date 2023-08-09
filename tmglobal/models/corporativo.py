@@ -3,7 +3,13 @@ from .global_choices import Noc_Global_Choices
 
 
 class Empresas(models.Model):
-    empresas_pk = models.IntegerField(primary_key=True)
+    empresas_pk = models.BigAutoField(
+        verbose_name="Código único da Empresa",
+        db_comment="Código Unico da Empresa",
+        primary_key=True,
+        auto_created=True,
+        db_index=True,
+    )
     cod_empresa = models.CharField(
         verbose_name="Cod.Empresa",
         db_comment="Código da empresa que será relalcionado com todo sistema",
@@ -130,8 +136,14 @@ class Empresas(models.Model):
 
 
 class Clientes(models.Model):
-    cod_cli = models.IntegerField(
+    cliente_pk = models.BigAutoField(
+        verbose_name="Código único do cliente",
+        db_comment="Código Unico do Cliente",
         primary_key=True,
+        auto_created=True,
+        db_index=True,
+    )
+    cod_cli = models.IntegerField(
         verbose_name="Cód.Cliente",
         db_comment="Código do Cliente",
     )
@@ -240,8 +252,14 @@ class Clientes(models.Model):
 
 
 class Fornecedores(models.Model):
-    cod_for = models.IntegerField(
+    fornecedor_pk = models.BigAutoField(
+        verbose_name="Código único do Fornecedor",
+        db_comment="Código Unico do Fornecedor",
         primary_key=True,
+        auto_created=True,
+        db_index=True,
+    )
+    cod_for = models.IntegerField(
         verbose_name="Cód.Fornecedor",
         db_comment="Código do Fornecedor",
     )

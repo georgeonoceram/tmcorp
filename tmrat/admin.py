@@ -1,3 +1,7 @@
 from django.contrib import admin
+from tmrat.models.rat import RelAtTec
 
-# Register your models here.
+
+@admin.register(RelAtTec)
+class AdmRat(admin.ModelAdmin):
+    ...

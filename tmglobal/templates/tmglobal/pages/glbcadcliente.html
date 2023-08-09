@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  {% include 'tmglobal/partials/head.html' %}
+  <title>{% block title %}{% endblock title %} Tecmed Sistema Corporativo</title>
+</head>
+
+<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+
+  {% include 'tmglobal/partials/header.html' %}    <!-- - Header - -->
+  {% include 'tmglobal/partials/menu.html' %}    <!-- - Nav Menu - -->
+
+  <main id="main">
+    {% include 'tmglobal/pages/glbcadcliente_p.html' %}      <!-- - Main Hero - -->
+  </main>
+
+  {% include 'tmglobal/partials/footer.html' %} <!-- - Footer - -->
+    
+  {% include 'tmglobal/partials/scroll_top_bt.html' %} <!-- - Scroll Top Button - -->
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  {% include 'tmglobal/partials/js_files.html' %} <!-- - JS Files - -->
+
+</body>
+
+</html>

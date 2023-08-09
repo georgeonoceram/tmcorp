@@ -3,6 +3,20 @@
   <ul>
     <li><a href="hcorp.html#hero" class="active">Home</a></li>
     <li><a href="{% url 'htmrat' %}">RAT Rel.Atend.Técnico</a></li>
+    <li class="dropdown has-dropdown"><a href="#"><span>Cadastros</span> <i class="bi bi-chevron-down"></i></a>
+      <ul class="dd-box-shadow">
+        <li><a href="{% url 'htmrat' %}">RAT Rel.Atend.Técnico</a></li>
+        <li><a href="{% url 'corpcli' %}">Clientes</a></li>
+        <li><a href="{% url 'corpfor' %}">Fornecedores</a></li>
+        <li class="dropdown has-dropdown"><a href="#"><span>Configurações Sistema</span> <i class="bi bi-chevron-down"></i></a>
+          <ul class="dd-box-shadow">
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Usuários</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
     <li><a href="hcorp.html#about">Sobre</a></li>
     <li><a href="hcorp.html#services">Serviços</a></li>
     <li><a href="hcorp.html#team">Time</a></li>

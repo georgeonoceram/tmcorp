@@ -1,0 +1,32 @@
+{% load static %}
+    <section id="hero" class="hero">
+        <div class="container">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope='col'> #Id</th>
+                <th scope='col'> Código</th>
+                <th scope='col'> Seq</th>
+                <th scope='col'> Tp Cliente</th>
+                <th scope='col'> Razão Soc.</th>
+                <th scope='col'> Nome</th>
+                <th scope='col'> Tel</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for vclientes in vclientes %}
+                  <tr>
+                    <td>{{vclientes.cliente_pk}}</td>
+                    <td>{{vclientes.cod_cli}}</td>
+                    <td>{{vclientes.seq_cli}}</td>
+                    <td>{{vclientes.tp_cli}}</td>
+                    <td>{{vclientes.nm_jur_cli}}</td>
+                    <td>{{vclientes.nm_com_cli}}</td>
+                    <td>{{vclientes.tel_cli}}</td>
+                  </tr>                      
+                {% endfor %}
+            </tbody>              
+          </table>    
+        </div>
+  
+      </section>  
