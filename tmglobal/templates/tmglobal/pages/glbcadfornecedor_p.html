@@ -1,5 +1,6 @@
 {% load static %}
-    <section id="hero" class="hero">
+<div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+  <section id="hero" class="hero">
         <div class="container">
           <table class="table table-striped">
             <thead>
@@ -11,7 +12,10 @@
                 <th scope='col'> Razão Soc.</th>
                 <th scope='col'> Nome</th>
                 <th scope='col'> Tel</th>
-              </tr>
+                <th scope='col'> </th>
+                <th scope='col'> Ações </th>
+                <th scope='col'> </th>
+             </tr>
             </thead>
             <tbody>
                 {% for vfornecex in vfornece %}
@@ -23,6 +27,15 @@
                     <td>{{vfornecex.nm_jur_for}}</td>
                     <td>{{vfornecex.nm_com_for}}</td>
                     <td>{{vfornecex.tel_for}}</td>
+                    <td>
+                      <a href="{% url 'hcorp' %}" button type="button" class="btn btn-primary bi bi-zoom-in">Consultar</button>
+                    </td>
+                    <td>
+                      <a href="{% url 'hcorp' %}" type="button" class="btn btn-warning bi bi-sliders">Alterar</button>
+                    </td>  
+                    <td>
+                      <a href="{% url 'hcorp' %}" type="button" class="btn btn-danger bi bi-trash3">Excluir</button>
+                    </td>            
                   </tr>                      
                 {% endfor %}
             </tbody>              

@@ -14,6 +14,11 @@
                 <th scope='col'> Vl.Atendimento</th>
                 <th scope='col'> Vl.Peças</th>
                 <th scope='col'> Vl.Total</th>
+                <th scope='col'> </th>
+                <th scope='col'> </th>
+                <th scope='col'> Ações </th>
+                <th scope='col'> </th>
+                <th scope='col'> </th>
               </tr>
             </thead>
             <tbody>
@@ -29,6 +34,21 @@
                     <td>{{vrelattecs.vl_atend_rat}}</td>
                     <td>{{vrelattecs.vl_pecas_rat}}</td>
                     <td>{{vrelattecs.vl_pecas_rat}}</td>
+                    <td>
+                      <a href="{% url 'hcorp' %}" button type="button" class="btn btn-primary bi bi-zoom-in"></button>
+                    </td>
+                    <td>
+                      <a href="{% url 'hcorp' %}" type="button" class="btn btn-warning bi bi-sliders"></button>
+                    </td>  
+                    <td>
+                      <a href="{% url 'hcorp' %}" type="button" class="btn btn-danger bi bi-trash3"></button>
+                    </td> 
+                    <td>
+                      <a href="{% url 'hcorp' %}" type="button" class="btn btn-info bi bi-printer"></button>
+                    </td>            
+                    <td>
+                      <a href="{% url 'hcorp' %}" type="button" class="btn btn-success bi bi-share"></button>
+                    </td>            
                   </tr>                      
                 {% endfor %}
             </tbody>              
