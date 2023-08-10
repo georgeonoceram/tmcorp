@@ -11,7 +11,7 @@ urlpatterns = [
     path("", home, name="home"),  # Home Login
     path("hcorp/", hcorp, name="hcorp"),  # Home Corporativo
     path(
-        "corpcli/", views.ClientListViewBase.as_view(), name="corpcli"
+        "glbclient/", views.ClientListViewBase.as_view(), name="glbclient"
     ),  # Cadastro de Clientes
     path("corpfor/", vw_corpfor, name="corpfor"),  # Cadastro de Fornecedores
     path("test/", test, name="test"),  # Home Login

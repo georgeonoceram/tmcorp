@@ -1,0 +1,15 @@
+{% load static %}
+<header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="{% url 'hcorp' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="{% static 'tmglobal/images/tmlogo_home.png' %}" alt="">
+        <a> 
+          {% if user.is_authenticated %}
+            Bem vindo, {{ user.get_full_name }}.<br> 
+            <!-- Último login: {{ user.last_login }}-->
+          {% else %}
+            <p>Por favor, realize seu login.</p>
+          {% endif %}
+        </a>
+      </a>

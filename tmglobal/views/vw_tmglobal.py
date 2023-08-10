@@ -29,7 +29,7 @@ class ClientListViewBase(LoginRequiredMixin, ListView):
     model = Clientes
     context_object_name = "vwclientes"
     ordering = ["-cliente_pk"]
-    template_name = "tmglobal/pages/glbcadcliente.html"
+    template_name = "tmglobal/pages/glbcorp_hp.html"
     paginate_by = 3
 
     def get_queryset(self):
@@ -42,4 +42,4 @@ class ClientListViewBase(LoginRequiredMixin, ListView):
 
 
 def test(requests):
-    return render(requests, "tmglobal/pages/test.html")
+    return render(requests, "tmglobal/pages/glbcorp_hp.html")
