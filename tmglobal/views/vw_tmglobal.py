@@ -17,14 +17,6 @@ def hcorp(requests):
     return render(requests, "tmglobal/pages/hcorp.html")
 
 
-@login_required
-def vw_corpfor(request):
-    vfornece = Fornecedores.objects.all()
-    return render(
-        request, "tmglobal/pages/glbcadfornecedor.html", {"vfornece": vfornece}
-    )
-
-
 class ClientListViewBase(LoginRequiredMixin, ListView):
     model = Clientes
     context_object_name = "vwclientes"
@@ -41,5 +33,17 @@ class ClientListViewBase(LoginRequiredMixin, ListView):
         return vclientes
 
 
-def test(requests):
-    return render(requests, "tmglobal/pages/glbcorp_hp.html")
+class ForneceListViewBase(LoginRequiredMixin, ListView):
+    model = Fornecedores
+    context_object_name = "vwfornece"
+    ordering = ["-fornece_pk"]
+    template_name = "tmglobal/pages/glbcorp_hp.html"
+    paginate_by = 3
+
+    def get_queryset(self):
+        txt_nomefor = self.request.GET.get("nm_com_for")
+        if txt_nomefor:
+            vfornecedor = Fornecedores.objects.filter(nm_com_for__icontains=txt_nomefor)
+        else:
+            vfornecedor = Fornecedores.objects.all()
+        return vfornecedor

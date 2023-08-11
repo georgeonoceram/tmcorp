@@ -6,9 +6,9 @@
 
   <div class="form-group">    <!-- - Pesquisa - -->
     <form action="?" method="GET">
-      <input type="text" name="nm_com_cli" id="" value="{{ request.GET.nm_com_cli}}" class="p-1 border" autocomplete="off" placeholder="Digite sua pesquisa">
+      <input type="text" name="nm_com_for" id="" value="{{ request.GET.nm_com_for}}" class="p-1 border" autocomplete="off" placeholder="Digite sua pesquisa">
       <button type="submit" class="btn btn-success"> Pesquisar</button>
-      <a href="{% url 'glbclient' %}" class="btn btn-info"> Limpar </a>
+      <a href="{% url 'glbfornece' %}" class="btn btn-info"> Limpar </a>
       <br>
     </form>
   </div> 
@@ -19,7 +19,7 @@
         <th scope='col'> #Id</th>
         <th scope='col'> Código</th>
         <th scope='col'> Seq</th>
-        <th scope='col'> Tp Cliente</th>
+        <th scope='col'> Ini.Relacion.</th>
         <th scope='col'> Razão Soc.</th>
         <th scope='col'> Nome</th>
         <th scope='col'> Tel</th>
@@ -31,13 +31,13 @@
     <tbody>
       {% for object in object_list %}
         <tr>
-          <td>{{object.cliente_pk}}</td>
-          <td>{{object.cod_cli}}</td>
-          <td>{{object.seq_cli}}</td>
-          <td>{{object.tp_cli}}</td>
-          <td>{{object.nm_jur_cli}}</td>
-          <td>{{object.nm_com_cli}}</td>
-          <td>{{object.tel_cli}}</td>
+          <td>{{object.fornece_pk}}</td>
+          <td>{{object.cod_for}}</td>
+          <td>{{object.seq_for}}</td>
+          <td>{{object.dt_ini_relac_for}}</td>
+          <td>{{object.nm_jur_for}}</td>
+          <td>{{object.nm_com_for}}</td>
+          <td>{{object.tel_for}}</td>
           <td><a class="btn btn-primary" href="{% url 'hcorp' %}" role="button">Visualizar</a> <!-- - bi bi-zoom-in - --> </td>
           <td><a class="btn btn-warning" href="{% url 'hcorp' %}" role="button">Alterar</a> <!-- - bi bi-sliders - --> </td>
           <td><a class="btn btn-danger" href="{% url 'hcorp' %}" role="button">Excluir</a> <!-- - bi bi-trash3 - --></td>
@@ -52,27 +52,27 @@
   
   <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
-      {% if request.GET.nm_com_cli %}
+      {% if request.GET.nm_com_for %}
         <li class="page-item"><a class="page-link"
-            href="?page=1&nm_com_cli={{request.GET.nm_com_cli}}">&laquo;Primeira</a>
+            href="?page=1&nm_com_for={{request.GET.nm_com_for}}">&laquo;Primeira</a>
         </li>
         <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">&laquo;Anterior</a></li>
       {% else %}
         <li class="page-item"><a class="page-link" href="?page=1">&laquo;Primeira</a></li>
         <li class="page-item"><a class="page-link"
-            href="?page={{page_obj.previous_page_number}}&nm_com_cli={{request.GET.nm_com_cli}}">&laquo;Anterior</a></li>
+            href="?page={{page_obj.previous_page_number}}&nm_com_for={{request.GET.nm_com_for}}">&laquo;Anterior</a></li>
         {% endif %}
     {% endif %}
     <li class="page-item">
       <span class="page-link"> Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }} </span>
     </li>
     {% if page_obj.has_next %}
-      {% if request.GET.nm_com_cli %}
+      {% if request.GET.nm_com_for %}
         <li class="page-item"><a class="page-link"
-        href="?page={{page_obj.next_page_number }}&nm_com_cli={{request.GET.nm_com_cli}}">&laquo;Próxima</a>
+        href="?page={{page_obj.next_page_number }}&nm_com_for={{request.GET.nm_com_for}}">&laquo;Próxima</a>
         </li>
         <li class="page-item"><a class="page-link"
-        href="?page={{page_obj.paginator.num_pages }}&nm_com_cli={{request.GET.nm_com_cli}}">&laquo;Última</a>
+        href="?page={{page_obj.paginator.num_pages }}&nm_com_for={{request.GET.nm_com_for}}">&laquo;Última</a>
         </li>
       {% else %}
         <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">Próxima</a></li>

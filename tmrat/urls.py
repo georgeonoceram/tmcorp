@@ -1,7 +1,10 @@
 from django.urls import path
+from . import views
+from django.views.generic.base import TemplateView
 
-from tmrat.views.vw_tmrat import htmrat
 
 urlpatterns = [
-    path("htmrat/", htmrat, name="htmrat"),  # Home RAT
+    path(
+        "htmrat/", views.ForneceListViewBase.as_view(), name="htmrat"
+    ),  # Relatório de At. Técnico
 ]

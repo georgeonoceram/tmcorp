@@ -1,14 +1,9 @@
 {% load static %}
-<footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-            <h4>Tecmed Brasil</h4>
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-  </footer><!-- End Footer -->
+<footer class="bg-light text-center text-white">
+{% block footer %}
+  <div class="text-center p-3" style="background-color:  #0080a3;">
+    © Tecmed - 2023 Copyright:
+    <a class="text-white" href="www.georgeonocera.com.br">Georgeo Nocera</a>
+  </div>
+  {% endblock footer %}
+</footer>

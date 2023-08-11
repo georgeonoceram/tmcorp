@@ -1,34 +1,30 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR" data-bs-theme="auto">
 
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  {% include 'tmglobal/partials/glbcorp_head.html' %}
+  {% include 'tmglobal/partials/glbcorp_head.html' %}   <!-- - Head - -->
 </head>
 
-<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+<body>
 
-  {% include 'tmglobal/partials/glbcorp_header.html' %}    <!-- - Header - -->
-  {% include 'tmglobal/partials/glbcorp_menu.html' %}    <!-- - Nav Menu - -->
+{% include 'tmglobal/partials/glbcorp_header.html' %}   <!-- - Header and Menu - -->
 
-  <main id="main">
-    {% include 'tmglobal/pages/glbcorp_client_pri.html' %}      <!-- - Main Hero - -->
-  </main>
+  {% if request.get_full_path == '/glbclient/' %}
+  
+    {% include 'tmglobal/pages/glbcorp_client_pri.html' %}      <!-- - Cadastro de Clientes - -->
+  
+  {% elif request.get_full_path == '/glbfornece/' %}
+  
+    {% include 'tmglobal/pages/glbcorp_fornece_pri.html' %}      <!-- - Cadastro de Fornecedores - -->
 
-  {% include 'tmglobal/partials/glbcorp_footer.html' %} <!-- - Footer - -->
-    
-  {% include 'tmglobal/partials/glbcorp_scroll_top_bt.html' %} <!-- - Scroll Top Button - -->
+  {% elif request.get_full_path == '/htmrat/' %}
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+    {% include 'tmrat/pages/tmrat_pri.html' %}      <!-- - Cadastro de Fornecedores - -->
+  
+  {% endif %}
 
-  {% include 'tmglobal/partials/glbcorp_js_files.html' %} <!-- - JS Files - -->
+{% include 'tmglobal/partials/glbcorp_footer.html' %}   <!-- - Footer - -->
 
 </body>
-
 </html>

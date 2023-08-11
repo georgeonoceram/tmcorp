@@ -1,0 +1,99 @@
+{% load static %}
+  
+<section id="hero" class="hero">
+    <div class="container">
+    <form action="?" method="GET">
+      <input type="text" name="cod_cli" id="" value="{{ request.GET.cod_cli}}" class="p-1 border"
+        autocomplete="off" placeholder="Digite nome">
+      <button type="submit" class="btn btn-success"> Pesquisar</button>
+      <a href="{% url 'htmrat' %}" class="btn btn-info"> Limpar </a>
+      <br>
+    </form>
+    <table class="table  table-sm table-striped">
+      <thead>
+        <tr>
+          <th scope='col'> #Id</th>
+          <th scope='col'> Cliente</th>
+          <th scope='col'> Técnico</th>
+          <th scope='col'> Tp RAT</th>
+          <th scope='col'> Data</th>
+          <th scope='col'> Hr.Inicial</th>
+          <th scope='col'> Hr.Final</th>
+          <th scope='col'> Vl.Atendimento</th>
+          <th scope='col'> Vl.Peças</th>
+          <th scope='col'> Vl.Total</th>
+          <th scope='col'> </th>
+          <th scope='col'> </th>
+          <th scope='col'> Ações </th>
+          <th scope='col'> </th>
+          <th scope='col'> </th>
+  </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+        <tr>
+          <td>{{object.rat_pk}}</td>
+          <td>{{object.cod_cli}}</td>
+          <td>{{object.user_rat}}</td>
+          <td>{{object.desc_rat}}</td>
+          <td>{{object.tp_rat}}</td>
+          <td>{{object.dt_rat}}</td>
+          <td>{{object.hr_ini_rat}}</td>
+          <td>{{object.hr_fim_rat}}</td>
+          <td>{{object.vl_atend_rat}}</td>
+          <td>{{object.vl_pecas_rat}}</td>
+          <td>{{object.vl_pecas_rat}}</td>
+          <td>
+            <a href="{% url 'hcorp' %}" button type="button" class="btn btn-primary bi bi-zoom-in"></button>
+          </td>
+          <td>
+            <a href="{% url 'hcorp' %}" type="button" class="btn btn-warning bi bi-sliders"></button>
+          </td>  
+          <td>
+            <a href="{% url 'hcorp' %}" type="button" class="btn btn-danger bi bi-trash3"></button>
+          </td> 
+          <td>
+            <a href="{% url 'hcorp' %}" type="button" class="btn btn-info bi bi-printer"></button>
+          </td>            
+          <td>
+            <a href="{% url 'hcorp' %}" type="button" class="btn btn-success bi bi-share"></button>
+          </td>            
+        </tr>                      
+        {% empty %}
+        <tr>
+          <td colspan="3"> Nenhum registro encontrado.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+        {% if request.GET.cod_cli %}
+          <li class="page-item"><a class="page-link"
+              href="?page=1&cod_cli{{request.GET.cod_cli}}">&laquo;Primeira</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">&laquo;Anterior</a></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="?page=1">&laquo;Primeira</a></li>
+          <li class="page-item"><a class="page-link"
+              href="?page={{page_obj.previous_page_number}}&cod_cli={{request.GET.cod_cli}}">&laquo;Anterior</a></li>
+          {% endif %}
+      {% endif %}
+      <li class="page-item">
+        <span class="page-link"> Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }} </span>
+      </li>
+      {% if page_obj.has_next %}
+        {% if request.GET.cod_cli %}
+          <li class="page-item"><a class="page-link"
+          href="?page={{page_obj.next_page_number }}&cod_cli={{request.GET.cod_cli}}">&laquo;Próxima</a>
+          </li>
+          <li class="page-item"><a class="page-link"
+          href="?page={{page_obj.paginator.num_pages }}&cod_cli={{request.GET.cod_cli}}">&laquo;Última</a>
+          </li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">Próxima</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.paginator.num_pages}}">Última &raquo;</a></li>
+        {% endif %}
+      {% endif %}
+  </div>
+</section>

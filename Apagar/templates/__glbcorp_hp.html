@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="auto">
+
+<head>
+  {% include 'tmglobal/partials/glbcorp_head.html' %}
+</head>
+
+<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+
+  {% include 'tmglobal/partials/glbcorp_header.html' %}    <!-- - Header - -->
+  {% include 'tmglobal/partials/glbcorp_menu.html' %}    <!-- - Nav Menu - -->
+
+  <main id="main">
+    {% if request.get_full_path == '/glbclient/' %}
+    
+      {% include 'tmglobal/pages/glbcorp_client_pri.html' %}      <!-- - Cadastro de Clientes - -->
+    
+    {% elif request.get_full_path == '/glbfornece/' %}
+    
+      {% include 'tmglobal/pages/glbcorp_fornece_pri.html' %}      <!-- - Cadastro de Fornecedores - -->
+
+    {% elif request.get_full_path == '/htmrat/' %}
+
+      {% include 'tmrat/pages/tmrat_pri.html' %}      <!-- - Cadastro de Fornecedores - -->
+    
+    {% endif %}
+
+
+  
+  </main>
+
+  {% include 'tmglobal/partials/glbcorp_footer.html' %} <!-- - Footer - -->
+    
+  {% include 'tmglobal/partials/glbcorp_scroll_top_bt.html' %} <!-- - Scroll Top Button - -->
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  {% include 'tmglobal/partials/glbcorp_js_files.html' %} <!-- - JS Files - -->
+
+</body>
+
+</html>
