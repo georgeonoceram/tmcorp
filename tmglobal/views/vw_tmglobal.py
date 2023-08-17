@@ -35,6 +35,13 @@ class ClientListViewBase(LoginRequiredMixin, ListView):
         return vclientes
 
 
+# Classe para Visualizar cadastro de Cliente
+class ClientViewBase(DetailView):
+    model = Clientes
+    template_name = "tmglobal/pages/glbcorp_hp.html"
+    success_url = reverse_lazy("glbclient")
+
+
 # Classe para Inserir registros no cadastro de Clientes
 class ClientCreatetBase(LoginRequiredMixin, CreateView):
     model = Clientes

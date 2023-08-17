@@ -14,6 +14,11 @@ urlpatterns = [
         "glbclient/", views.ClientListViewBase.as_view(), name="glbclient"
     ),  # Listar Cadastro de Clientes
     path(
+        "glbclientvw/<pk>",
+        views.ClientViewBase.as_view(),
+        name="glbclientvw",
+    ),  # Visualizar Cadastro do Cliente
+    path(
         "glbclientins/", views.ClientCreatetBase.as_view(), name="glbclientins"
     ),  # Inserir Cadastro de Clientes
     path(

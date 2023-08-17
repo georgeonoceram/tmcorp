@@ -45,7 +45,7 @@
           <td>{{object.nm_com_cli}}</td>
           <td>{{object.tel_cli}}</td>
           <td>{{object.email_cli}}</td>
-          <td><a class="btn btn-primary btn-sm" href="{% url 'hcorp' %}" role="button" title="Visualizar"><i class="bi-zoom-in"></i></a></td>
+          <td><a class="btn btn-primary btn-sm" href="{% url 'glbclientvw'  object.cliente_pk%}" role="button" title="Visualizar"><i class="bi-zoom-in"></i></a></td>
           <td><a class="btn btn-warning btn-sm" href="{% url 'glbclientupd' object.cliente_pk %}" role="button" title="Alterar"><i class="bi-sliders"></i></a></td>
           <td><a class="btn btn-danger btn-sm" href="{% url 'glbclientdel' object.cliente_pk %}" role="button" title="Excluir"><i class="bi-trash"></i></a></td>
           <td><a class="btn btn-success btn-sm" href="#" role="button" title="Ficha Financeira"><i class="bi bi-currency-exchange"></i></a></td>
@@ -91,3 +91,4 @@
     {% endif %}
 </div>
 <br>
+

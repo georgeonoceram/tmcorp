@@ -10,31 +10,55 @@
 
 {% include 'tmglobal/partials/glbcorp_header.html' %}   <!-- - Header and Menu - -->
 
-  {% if request.resolver_match.url_name == 'glbclient' %}
+<!-- #################- Cadastro de Clientes -################# -->
+  {% if request.resolver_match.url_name == 'glbclient' %}   <!-- - Cadastro de Clientes - -->
   
-    {% include 'tmglobal/pages/glbcorp_client_pri.html' %}      <!-- - Cadastro de Clientes - -->
+    {% include 'tmglobal/pages/glbcorp_client_pri.html' %}      
   
-  {% elif request.resolver_match.url_name == 'glbfornece' %}
+  {% elif request.resolver_match.url_name == 'glbclientins' %}   <!-- - Create Cadastro de Clientes - -->
+
+    {% include 'tmglobal/pages/glbcorp_client_crud.html' %}     
+    
+    {% elif request.resolver_match.url_name == 'glbclientvw' %}    <!-- - Visualiza Cad Cli - -->
+
+    {% include 'tmglobal/pages/glbcorp_client_crud.html' %}     
+
+  {% elif request.resolver_match.url_name == 'glbclientupd' %}  <!-- - Update Cadastro de Clientes - -->
+
+    {% include 'tmglobal/pages/glbcorp_client_crud.html' %}      
+
+  {% elif request.resolver_match.url_name == 'glbclientdel' %}     <!-- - Delete Cadastro de Clientes - -->
+
+    {% include 'tmglobal/pages/glbcorp_client_crud.html' %}     
+
+
+<!-- #################- Cadastro de Fornecedores -################# -->
+  {% elif request.resolver_match.url_name == 'glbfornece' %}  <!-- - Cadastro de Fornecedores - -->
   
-    {% include 'tmglobal/pages/glbcorp_fornece_pri.html' %}      <!-- - Cadastro de Fornecedores - -->
+    {% include 'tmglobal/pages/glbcorp_fornece_pri.html' %}      
 
-  {% elif request.resolver_match.url_name == 'htmrat' %}
+<!-- #################- Relatório de Atendimento Técnico -################# -->
+  {% elif request.resolver_match.url_name == 'htmrat' %}  <!-- - Cadastro de RAT - -->
 
-    {% include 'tmrat/pages/tmrat_pri.html' %}      <!-- - Cadastro de Fornecedores - -->
-  
-  {% elif request.resolver_match.url_name == 'glbclientins' %}
+    {% include 'tmrat/pages/tmrat_pri.html' %}      
 
-    {% include 'tmglobal/pages/glbcorp_client_create.html' %}      <!-- - Create Cadastro de Clientes - -->
+  {% elif request.resolver_match.url_name == 'ratview' %}   <!-- - Visualizar RAT - -->
 
-  {% elif request.resolver_match.url_name == 'glbclientdel' %}
+    {% include 'tmrat/pages/tmrat_crud.html' %}      
 
-    {% include 'tmglobal/pages/glbcorp_client_delete.html' %}      <!-- - Delete Cadastro de Clientes - -->
+  {% elif request.resolver_match.url_name == 'ratcreate' %}   <!-- - Criar RAT - -->
 
-  {% elif request.resolver_match.url_name == 'glbclientupd' %}
+    {% include 'tmrat/pages/tmrat_crud.html' %}      
 
-    {% include 'tmglobal/pages/glbcorp_client_update.html' %}      <!-- - Update Cadastro de Clientes - -->
+  {% elif request.resolver_match.url_name == 'ratupdate' %}   <!-- - Alterar RAT - -->
 
-  {% endif %}
+    {% include 'tmrat/pages/tmrat_crud.html' %}      
+
+  {% elif request.resolver_match.url_name == 'ratdelete' %}   <!-- - Deletar RAT - -->
+
+    {% include 'tmrat/pages/tmrat_crud.html' %}      
+
+{% endif %}
 
 {% include 'tmglobal/partials/glbcorp_footer.html' %}   <!-- - Footer - -->
 
