@@ -1,0 +1,59 @@
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+<br>
+<p class="h4 text-center">Cadastro de Clientes - Cadastrar</p>
+<br>
+<div class="container">
+  <form method="POST">{% csrf_token %}
+    <div class="form-row">
+      <div class="col-sm-2">
+        {{ form.cod_cli|as_crispy_field }}    
+      </div>
+      <div class="col-sm-2">
+        {{ form.seq_cli|as_crispy_field }}    
+      </div>
+      <div class="col-sm-2">
+        {{ form.tp_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-6">
+        {{ form.nm_jur_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-5">
+        {{ form.nm_com_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-3">
+        {{ form.tel_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-4">
+        {{ form.cnpj_cpf_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-4">
+        {{ form.end_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-3">
+        {{ form.end_compl_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-3">
+        {{ form.end_bairro_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-2">
+        {{ form.end_cep_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-2">
+        {{ form.end_uf_cli|as_crispy_field }}    
+      </div>
+          <div class="col-md-3">
+        {{ form.dt_ini_relac_cli|as_crispy_field }}    
+      </div>
+      <div class="col-md-4">
+        {{ form.email_cli|as_crispy_field }}    
+      </div>
+    </div>
+    <br>
+      <button type="submit" class="btn btn-danger"> Cadastrar </button>
+      <a href="{% url 'glbclient' %}" class="btn btn-primary">Voltar</a>
+  </form>
+<br>
+</div>

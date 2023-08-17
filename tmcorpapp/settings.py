@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "tmglobal",
     "tmrat",
     "rolepermissions",
+    "crispy_forms",
+    "crispy_bootstrap4",
 ]
 
 MIDDLEWARE = [
@@ -152,3 +154,6 @@ ROLEPERMISSIONS_MODULE = "tmcorpapp.roles"
 # Redirect Logout
 LOGIN_REDIRECT_URL = "hcorp"
 LOGOUT_REDIRECT_URL = "/"
+
+# Crispy Forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"

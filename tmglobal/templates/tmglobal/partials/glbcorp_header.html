@@ -14,7 +14,7 @@
     <!-- Links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a style="color:white;" class="nav-link"  href="">Home</a> <!-- RESOLVER!!!!!!!!!!!!!-->
+        <a style="color:white;" class="nav-link"  href="{% url 'hcorp' %}">Home</a> <!-- RESOLVER!!!!!!!!!!!!!-->
       </li>
 
       <!-- Dropdown Aplicações -->
@@ -24,7 +24,7 @@
         </a>
         <div class="dropdown-menu" style="background-color: #0080a3;">
             {% block menu_drop1 %}
-          <a style="color:white;" class="dropdown-item" href=""> RAT Rel.At.Técnico </a> <!-- RESOLVER!!!!!!!!!!!!!-->
+          <a style="color:white;" class="dropdown-item" href="{% url 'htmrat' %}"> RAT Rel.At.Técnico </a> <!-- RESOLVER!!!!!!!!!!!!!-->
             {% endblock menu_drop1%}
         </div>
       </li>
@@ -36,8 +36,8 @@
         </a>
         <div class="dropdown-menu" style="background-color: #0080a3;">
             {% block menu_drop2 %}
-          <a style="color:white;" class="dropdown-item" href=""> Clientes </a> <!-- RESOLVER!!!!!!!!!!!!!-->
-          <a style="color:white;" class="dropdown-item" href=""> Fornecedores  </a> <!-- RESOLVER!!!!!!!!!!!!!-->
+          <a style="color:white;" class="dropdown-item" href="{% url 'glbclient' %}"> Clientes </a> <!-- RESOLVER!!!!!!!!!!!!!-->
+          <a style="color:white;" class="dropdown-item" href="{% url 'glbfornece' %}"> Fornecedores  </a> <!-- RESOLVER!!!!!!!!!!!!!-->
             {% endblock menu_drop2%}
         </div>
       </li>

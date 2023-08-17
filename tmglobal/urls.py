@@ -12,7 +12,20 @@ urlpatterns = [
     path("hcorp/", hcorp, name="hcorp"),  # Home Corporativo
     path(
         "glbclient/", views.ClientListViewBase.as_view(), name="glbclient"
-    ),  # Cadastro de Clientes
+    ),  # Listar Cadastro de Clientes
+    path(
+        "glbclientins/", views.ClientCreatetBase.as_view(), name="glbclientins"
+    ),  # Inserir Cadastro de Clientes
+    path(
+        "glbclientupd/<pk>",
+        views.ClientUpdatetBase.as_view(),
+        name="glbclientupd",
+    ),  # Alterar Cadastro de Clientes
+    path(
+        "glbclientdel/<pk>",
+        views.ClientDeletetBase.as_view(),
+        name="glbclientdel",
+    ),  # Delete Cadastro de Clientes
     path(
         "glbfornece/", views.ForneceListViewBase.as_view(), name="glbfornece"
     ),  # Cadastro de Fornecedores

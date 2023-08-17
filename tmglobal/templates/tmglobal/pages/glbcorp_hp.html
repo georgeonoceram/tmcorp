@@ -10,18 +10,30 @@
 
 {% include 'tmglobal/partials/glbcorp_header.html' %}   <!-- - Header and Menu - -->
 
-  {% if request.get_full_path == '/glbclient/' %}
+  {% if request.resolver_match.url_name == 'glbclient' %}
   
     {% include 'tmglobal/pages/glbcorp_client_pri.html' %}      <!-- - Cadastro de Clientes - -->
   
-  {% elif request.get_full_path == '/glbfornece/' %}
+  {% elif request.resolver_match.url_name == 'glbfornece' %}
   
     {% include 'tmglobal/pages/glbcorp_fornece_pri.html' %}      <!-- - Cadastro de Fornecedores - -->
 
-  {% elif request.get_full_path == '/htmrat/' %}
+  {% elif request.resolver_match.url_name == 'htmrat' %}
 
     {% include 'tmrat/pages/tmrat_pri.html' %}      <!-- - Cadastro de Fornecedores - -->
   
+  {% elif request.resolver_match.url_name == 'glbclientins' %}
+
+    {% include 'tmglobal/pages/glbcorp_client_create.html' %}      <!-- - Create Cadastro de Clientes - -->
+
+  {% elif request.resolver_match.url_name == 'glbclientdel' %}
+
+    {% include 'tmglobal/pages/glbcorp_client_delete.html' %}      <!-- - Delete Cadastro de Clientes - -->
+
+  {% elif request.resolver_match.url_name == 'glbclientupd' %}
+
+    {% include 'tmglobal/pages/glbcorp_client_update.html' %}      <!-- - Update Cadastro de Clientes - -->
+
   {% endif %}
 
 {% include 'tmglobal/partials/glbcorp_footer.html' %}   <!-- - Footer - -->

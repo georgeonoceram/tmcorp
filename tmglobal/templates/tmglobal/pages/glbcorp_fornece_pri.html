@@ -1,18 +1,22 @@
 {% load static %}
 
 <br>
+<p class="h4 text-center">Cadastro de Fornecedores</p>
+<br>
 
 <div class="container">
 
   <div class="form-group">    <!-- - Pesquisa - -->
     <form action="?" method="GET">
       <input type="text" name="nm_com_for" id="" value="{{ request.GET.nm_com_for}}" class="p-1 border" autocomplete="off" placeholder="Digite sua pesquisa">
-      <button type="submit" class="btn btn-success"> Pesquisar</button>
-      <a href="{% url 'glbfornece' %}" class="btn btn-info"> Limpar </a>
+      <button type="submit" class="btn btn-outline-success btn-sm"> Pesquisar</button>
+      <a href="{% url 'glbfornece' %}" class="btn btn-outline-primary btn-sm"> Limpar </a>
+      <i class="bi bi-grip-vertical"></i>
+      <button type="button" class="btn btn-primary btn-sm" title="Incluir Fornecedor">Incluir</button>
       <br>
     </form>
   </div> 
-
+<div class="table-responsive">
   <table class="table table-sm table-striped">    <!-- - Tabela - -->
     <thead>
       <tr>
@@ -23,9 +27,10 @@
         <th scope='col'> Razão Soc.</th>
         <th scope='col'> Nome</th>
         <th scope='col'> Tel</th>
-        <th scope='col'> </th>
-        <th scope='col'> Ações </th>
-        <th scope='col'> </th>
+        <th scope='col'></th>
+        <th scope='col'></th>
+        <th scope='col'></th>
+        <th scope='col'></th>
       </tr>
     </thead>
     <tbody>
@@ -38,9 +43,10 @@
           <td>{{object.nm_jur_for}}</td>
           <td>{{object.nm_com_for}}</td>
           <td>{{object.tel_for}}</td>
-          <td><a class="btn btn-primary" href="{% url 'hcorp' %}" role="button">Visualizar</a> <!-- - bi bi-zoom-in - --> </td>
-          <td><a class="btn btn-warning" href="{% url 'hcorp' %}" role="button">Alterar</a> <!-- - bi bi-sliders - --> </td>
-          <td><a class="btn btn-danger" href="{% url 'hcorp' %}" role="button">Excluir</a> <!-- - bi bi-trash3 - --></td>
+          <td><a class="btn btn-primary btn-sm" href="{% url 'hcorp' %}" role="button" title="Visualizar"><i class="bi-zoom-in"></i></a></td>
+          <td><a class="btn btn-warning btn-sm" href="{% url 'hcorp' %}" role="button" title="Alterar"><i class="bi-sliders"></i></a></td>
+          <td><a class="btn btn-danger btn-sm" href="{% url 'hcorp' %}" role="button" title="Excluir"><i class="bi-trash"></i></a></td>
+          <td><a class="btn btn-success btn-sm" href="{% url 'hcorp' %}" role="button" title="Ficha Financeira"><i class="bi bi-currency-exchange"></i></a></td>
         </tr>
       {% empty %}
         <tr>
@@ -49,7 +55,9 @@
       {% endfor %}
     </tbody>
   </table>
-  
+</div>  
+  <br>
+
   <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
       {% if request.GET.nm_com_for %}
@@ -80,3 +88,4 @@
       {% endif %}
     {% endif %}
 </div>
+<br>

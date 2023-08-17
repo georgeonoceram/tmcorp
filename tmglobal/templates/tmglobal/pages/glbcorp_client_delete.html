@@ -1,0 +1,21 @@
+{% load static %}
+
+<br>
+<p class="h4 text-center">Cadastro de Clientes - Excluir</p>
+<br>
+
+<div class="form-group">
+
+  <form method="POST">{% csrf_token %}
+    <p>Deseja excluir o Cliente: </p>
+    <p>Código:<b>{{ object.cod_cli }}</b></p>
+    <p>Seq.:<b>{{ object.seq_cli }}</b></p>
+    <p>Razão Social:<b>{{ object.nm_jur_cli }}</b></p>
+    <p>Nome Com.:<b>{{ object.nm_com_cli }}</b></p>
+    <p>CNPJ/CPF:<b>{{ object.cnpj_cpf_cli }}</b></p>
+    <button type="submit" class="btn btn-danger"> Excluir </button>
+    <a href="{% url 'glbclient' %}" class="btn btn-primary">Cancelar</a>
+</form>
+
+</div>
+<br>
